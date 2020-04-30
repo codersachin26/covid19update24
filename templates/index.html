@@ -8,7 +8,7 @@
             background-image: url("{% static 'covid-19.jpg' %}");
             background-repeat: no-repeat;
             font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-            color: rgb(2, 2, 1);
+            color: rgb(247, 247, 247);
             
         }
     </style>
@@ -114,6 +114,41 @@
              </div>
 
 
+        </div>
+
+    </div>
+
+
+    <div style="float: left; border: 3px solid salmon; width:95%; height: auto; margin: 20 20 20 20;">
+        <div style="float: left; width: 100%;"><h1><em>All Countries</em></h1></div>
+
+        <div style="float: left;">
+            <table style="width:100%">
+                <tr>
+                  <th>Date</th>
+                  <th>Country</th>
+                  <th>CountryCode</th>
+                  <th>NewConfirmed</th>
+                  <th>TotalConfirmed</th>
+                  <th>NewDeaths</th>
+                  <th>TotalDeaths</th>
+                  <th>NewRecovered</th>
+                  <th>TotalRecovered</th>
+                </tr>
+                {% for country in data.Countries %}
+                <tr>
+                  <td>{{country.Date}}</td>
+                  <td>{{country.Country}}</td>
+                  <td>{{country.CountryCode}}</td>
+                  <td>{{country.NewConfirmed}}</td>
+                  <td>{{country.TotalConfirmed}}</td>
+                  <td>{{country.NewDeaths}}</td>
+                  <td>{{country.TotalDeaths}}</td>
+                  <td>{{country.NewRecovered}}</td>
+                  <td>{{country.TotalRecovered}}</td>
+                </tr>
+                {%endfor%}
+              </table>
         </div>
 
     </div>

@@ -9,5 +9,13 @@ def home(request):
     endpoint = 'https://api.covid19api.com/summary'
     response = requests.get(endpoint)
     data = response.json
-    india = data()['Countries'][101]
-    return render(request,'index.html')
+
+    for country in  data()['Countries']:
+        if country['CountryCode'] == 'IN':
+            india = country
+            break
+        else:
+            continue
+
+    
+    return render(request,'index.html',{'data':data,'india':india})
