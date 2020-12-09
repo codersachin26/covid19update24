@@ -1,2 +1,2 @@
 # covid19update24
- a website for corona virus update
+ it is a website for corona virus cases update
